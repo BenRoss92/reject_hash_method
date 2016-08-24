@@ -40,12 +40,12 @@ hash # => {"Bank"=>1, "Aldgate"=>2, "Hammersmith"=>3}
 
 * Original `hash` has now been altered - **be careful as deletions will be permanent!**
 * _Tip: If no changes are made to hash, returns_ `nil`
-..* `.delete_if` **won't** return `nil` if no changes are made
+  * `.delete_if` **won't** return `nil` if no changes are made
 
 ### Selecting items by values:
 
 * Must specify 2 arguments inside pipes (i.e. `|key, value|`)
-..* If only specifies value argument - e.g. `{ |v| v == 3 }`, will look for key value instead.
+  * If only specifies value argument - e.g. `{ |v| v == 3 }`, will look for key value instead.
 
 ##### Example:
 
@@ -79,10 +79,10 @@ new_hash = hash.reject { |k,v| v == 2 } # => {"Bank"=>1, "Hammersmith"=>3}
 ## Some 'good-to-knows':
 
 * Similar to `.delete_if`, but nicer :D (can't delete things by accident!)
-..* `.delete_if` does **not** make a copy
+  * `.delete_if` does **not** make a copy
 * If block is not provided, returns an Enumerator - can then use Enumerator
 methods on hash
-..* Allows you to then chain Enumerators together - e.g.
+  * Allows you to then chain Enumerators together - e.g.
 `hash.map.with_index...`
 * `.delete` will remove specified key from hash and return deleted value,
 **not** the altered hash
