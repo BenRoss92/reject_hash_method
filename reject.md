@@ -87,7 +87,7 @@ methods on hash
 * `.delete` will remove specified key from hash and return deleted value,
 **not** the altered hash
 
-## Donts:
+## Dont's:
 
 * Putting values on their own in the block has no effect:
 
