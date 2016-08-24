@@ -67,17 +67,19 @@ new_hash = hash.reject { |k,v| v == 1 } # => {"Aldgate"=>2, "Hammersmith"=>3, "M
 hash = {'Bank'=>1,'Aldgate'=>2,'Hammersmith'=>3,'Morden'=>2 }
 ```
 
-2 is a common value in our hash - both the `Bank` and `Morden`
+`2` is a common value in our hash - both the `Bank` and `Morden`
 keys have them, so they will be deleted:
 
 ```
 new_hash = hash.reject { |k,v| v == 2 } # => {"Bank"=>1, "Hammersmith"=>3}
 ```
 
-* Removes any key-value pairs with values equalling 2
+* Removes any key-value pairs with values equalling `2`
 
 ## Some 'good-to-knows':
 
+* Only need to specify either a key or value in block
+  * _(Hash items cannot have both identical keys and values)_
 * Similar to `.delete_if`, but nicer :D (can't delete things by accident!)
   * `.delete_if` does **not** make a copy
 * If block is not provided, returns an Enumerator - can then use Enumerator
@@ -105,3 +107,5 @@ hash = {(Object.new)=>:symbol,'string'=>7}
 new_hash = hash.reject { |k,v| k.class == Object }
 new_hash # => {"string"=>7}
 ```
+
+* Deletes all key-value pairs with keys that belong to the `Object` class
