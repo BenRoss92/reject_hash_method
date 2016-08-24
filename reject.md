@@ -1,6 +1,6 @@
 # `.reject`
 
-## What is `.reject?``
+## What is `.reject?`
 
 * Part of the **Hash Class**
 * Returns a copy of original hash
@@ -8,7 +8,7 @@
 
 ## Selecting items by keys:
 
-### Example:
+##### Example:
 
 ```
 hash = {'Bank'=>1,'Aldgate'=>2,'Hammersmith'=>3,'Morden'=>2 }
@@ -22,7 +22,7 @@ hash = {'Bank'=>1,'Aldgate'=>2,'Hammersmith'=>3,'Morden'=>2 }
 
 1. Can assign new hash to a variable, e.g. `new_hash`:
 
-### Example:
+##### Example:
 
 ```
 new_hash = hash.reject { |k| k == 'Morden' } # => {"Bank"=>1, "Aldgate"=>2, "Hammersmith"=>3}
@@ -30,7 +30,7 @@ new_hash = hash.reject { |k| k == 'Morden' } # => {"Bank"=>1, "Aldgate"=>2, "Ham
 
 2. Use `.reject!` to alter original, e.g.:
 
-### Example:
+##### Example:
 
 ```
 hash = {'Bank'=>1,'Aldgate'=>2,'Hammersmith'=>3,'Morden'=>2 }
@@ -47,7 +47,7 @@ hash # => {"Bank"=>1, "Aldgate"=>2, "Hammersmith"=>3}
 * Must specify 2 arguments inside pipes (i.e. `|key, value|`)
 ..* If only specifies value argument - e.g. `{ |v| v == 3 }`, will look for key value instead.
 
-### Example:
+##### Example:
 
 ```
 hash = {'Bank'=>1,'Aldgate'=>2,'Hammersmith'=>3,'Morden'=>2 }
@@ -61,12 +61,18 @@ new_hash = hash.reject { |k,v| v == 1 } # => {"Aldgate"=>2, "Hammersmith"=>3, "M
 
 * `.reject` removes **any** common key-pairs (not just 1)
 
-### Example:
+##### Example:
 
-`hash = {'Bank'=>1,'Aldgate'=>2,'Hammersmith'=>3,'Morden'=>2 }`
+```
+hash = {'Bank'=>1,'Aldgate'=>2,'Hammersmith'=>3,'Morden'=>2 }
+```
+
 2 is a common value in our hash - both the `Bank` and `Morden`
 keys have them, so they will be deleted:
-`new_hash = hash.reject { |k,v| v == 2 } # => {"Bank"=>1, "Hammersmith"=>3}`
+
+```
+new_hash = hash.reject { |k,v| v == 2 } # => {"Bank"=>1, "Hammersmith"=>3}
+```
 
 * Removes any key-value pairs with values equalling 2
 
@@ -92,7 +98,7 @@ new_hash = hash.reject { |v| v == 2 } # => {'Bank'=>1,'Aldgate'=>2,'Hammersmith'
 
 ## Other Examples:
 
-* Finding and deleting all instances of a certain class:
+* Could find and delete all instances of a certain class:
 
 ```
 hash = {(Object.new)=>:symbol,'string'=>7}
