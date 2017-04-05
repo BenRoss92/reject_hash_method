@@ -1,4 +1,4 @@
-# `.reject`
+# `.reject` Presentation
 
 ## What is `.reject?`
 
